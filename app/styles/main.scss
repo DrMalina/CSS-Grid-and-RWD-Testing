@@ -1,0 +1,88 @@
+@import "normalize";
+
+//GRID
+
+$colors: (
+  first: red,
+  second: indianred,
+  third:  blue,
+  fourth: green,
+  fifth: orange,
+  sixth: purple
+);
+
+html{
+  font-size: 16px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: minmax(150px,auto);
+  max-width: 75rem;
+  margin: 0 auto;
+  grid-gap: 0.625rem;
+  grid-template-areas:
+     'header header header header'
+     'main main main main'
+     'main main main main'
+     'nav nav aside aside'
+     'section section section section'
+     'section section section section'
+     'footer footer footer footer';
+}
+
+@media screen and (min-width: 760px){
+  .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 0.625rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    grid-template-areas:
+      "header header header header"
+      "nav aside main main"
+      "nav aside main main"
+      "section section main main"
+      "section section main main"
+      "footer footer footer footer";
+  }
+}
+
+.container>*{
+  color: white;
+  text-align: center;
+  //background-color: blue;
+  font-size: calc(1.5em + 2vmin);
+}
+
+.header{
+  grid-area: header;
+  background-color: map_get($colors,first);
+}
+
+.main{
+  grid-area: main;
+  background-color: map_get($colors,second);
+}
+
+.section{
+  grid-area: section;
+  background-color: map_get($colors,third);
+}
+
+.aside{
+  grid-area: aside;
+  background-color: map_get($colors,fourth);
+}
+
+.nav{
+  grid-area: nav;
+  background-color: map_get($colors,fifth);
+}
+
+.footer{
+  grid-area: footer;
+  background-color: map_get($colors,sixth);
+}

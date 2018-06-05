@@ -1,0 +1,15 @@
+node_modules
+dist
+.tmp
+bower_components
+test/bower_components
+test
+bower.json
+gulpfile.js
+package.json
+package-lock.json
+.babelrc
+.bowerrc
+.editorconfig
+.gitattributes
+.yo-rc.json
